@@ -1,0 +1,18 @@
+GET http://ec2-3-141-42-234.us-east-2.compute.amazonaws.com:3000/login/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJBQkMiLCJlbWFpbCI6IlhZUFoifSwiaWF0IjoxNjIzNzUwOTk3LCJleHAiOjE2MjM3NTE1OTd9.Y5lrZtS20CijD2eg7FwFLj6iHPwpLu4NiDOeV3Qvos4
+###
+POST http://localhost:3000/createUser
+Content-Type: application/json
+
+{
+    "name": "Virendra",
+    "email": "virendra@gmail.com",
+    "password": "123456789"
+}
+###
+POST http://localhost:3000/getAllPosts
+Content-Type: application/json
+
+{
+    "user_id": "8565739573"
+}
