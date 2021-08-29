@@ -6,8 +6,8 @@ import userService from '../services/user.service'
 export class IndexController {
     public async createUser(req: Request, res: Response) {
         try {
-            const { name, email, password, profileAvatar } = req.body
-            await userService.createUser(name, password, email, profileAvatar)
+            const { name, email, password } = req.body
+            await userService.createUser(name, password, email)
             res.status(201).send({ success: true })
         } catch (error) {
             console.log(error)
@@ -82,8 +82,8 @@ export class IndexController {
 
     public async createPost(req: Request, res: Response) {
         try {
-            const { user_id, likes, comments, value } = req.body
-            postService.createPost(user_id,likes, comments, value).then((resp:any)=>{
+            const { user_id, likes, comments, value, img} = req.body
+            postService.createPost(user_id,likes, comments, value, img).then((resp:any)=>{
                 res.status(200).send(resp)
             })
 

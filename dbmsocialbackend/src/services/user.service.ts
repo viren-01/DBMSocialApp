@@ -2,13 +2,13 @@ import User from "../models/users.model"
 import JWT from "../helpers/jwt"
 
 class userService {
-    public static async createUser(name: string, password: string, email: string, profileAvatar?: string) {
+    public static async createUser(name: string, password: string, email: string) {
         try {
             let data = {
                 name,
                 email,
                 password,
-                profileAvatar
+                profileAvatar:""
             }
             const token = await JWT.generateToken(data)
             const newuser = new User({

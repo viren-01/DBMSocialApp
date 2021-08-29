@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from 'react';
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "./login.component";
 import SignUp from "./signup.component";

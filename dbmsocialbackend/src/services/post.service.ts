@@ -2,6 +2,7 @@ import Post from "../models/posts.model"
 import JWT from "../helpers/jwt"
 import { Condition } from "mongodb"
 import userService from "./user.service"
+import User from "../models/users.model"
 
 class postService {
 
@@ -17,15 +18,20 @@ class postService {
         }
     }
 
-    public static async createPost(user_id: any, likes: number, comments: string, value: string) {
+    public static async createPost(user_id: any, likes: number, comments: string, value: string, img: string) {
         try {
-            console.log(user_id, likes, comments, value )
+            const userInfo: any = await User.findOne({_id: user_id})
+            const date = Date.now()
             const newPost = new Post({
                 user_id,
                 likes,
                 comments,
                 value,
-                users: [user_id]
+                img,
+                users: [user_id],
+                createdBy: userInfo.name,
+                avatar: userInfo.profileAvatar,
+                createdOn: date
             })
             await newPost.save()
         } catch (error) {

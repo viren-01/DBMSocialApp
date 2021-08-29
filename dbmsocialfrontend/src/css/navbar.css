@@ -1,0 +1,8 @@
+.navbar{
+    width: 100vw;
+    position: fixed;
+    left: 50%;
+    top: 4%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}

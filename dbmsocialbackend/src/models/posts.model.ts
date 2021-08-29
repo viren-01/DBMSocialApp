@@ -23,6 +23,18 @@ const postSchema = new Schema({
     },
     users:{
         type:Array
+    },
+    img:{
+        type: String
+    },
+    createdBy:{
+        type: String
+    },
+    avatar:{
+        type: String
+    },
+    createdOn:{
+        type: String
     }
 })
 

@@ -3,7 +3,9 @@ import { Redirect, useHistory } from 'react-router-dom'
 import validator from 'validator'
 import Axios from 'axios'
 import { AuthContext } from "../contexts/authContext";
-import Dashboard from "./Dashboard/homepage";
+import '../css/login.css'
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 const Login = ({ history }) => {
     const context = useContext(AuthContext)
@@ -12,6 +14,7 @@ const Login = ({ history }) => {
     const [err, setErr] = useState("")
     const [auth, setAuth] = useState(null)
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+
 
     //let history = useHistory();
 
@@ -34,27 +37,30 @@ const Login = ({ history }) => {
 
 
     return (
-        <form>
+        <form className= "login">
             <h3>Sign In</h3>
             <div className="form-group">
-                <label>Email address</label>
-                <input type="email" style={{ marginTop: '5px' }} className="form-control" placeholder="Enter email" onChange={(e) => {
+                <TextField id="filled-basic" label="email" variant="filled" autoComplete="false" style={{marginBottom: "20px", width: "350px"}} onChange={(e) => {
                     setEmail(e.target.value)
-                }} />
+                    console.log(email)
+                }}/>
                 <span style={{
                     fontWeight: 'bold',
                     color: 'red',
-                }}>{err}</span>
+                }}>{err}</span><br></br>
             </div>
 
             <div className="form-group">
-                <label style={{ marginTop: '12px' }} >Password</label>
-                <input type="password" style={{ marginTop: '5px' }} className="form-control" placeholder="Enter password" onChange={(e) => {
+            <TextField id="filled-basic" type="password" label="password" variant="filled" autoComplete="false" style={{marginBottom: "20px", width: "350px"}} onChange={(e) => {
                     setPwd(e.target.value)
-                }} />
+                    console.log(pwd)
+                }}/>
+                
             </div>
 
-            <button type="submit" style={{ marginTop: '12px' }} className="btn btn-primary btn-block" onClick={handleLogin}>Submit</button>
+            <Button variant="contained" color="primary" component="span" onClick={handleLogin}>
+          Submit
+        </Button>
             <p className="forgot-password text-right">
                 <a href="/sign-up"> Register/Sign Up</a>
             </p>
