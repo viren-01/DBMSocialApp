@@ -5,8 +5,8 @@ POST http://localhost:3000/createUser
 Content-Type: application/json
 
 {
-    "name": "Virendra",
-    "email": "virendra@gmail.com",
+    "name": "Testing",
+    "email": "test@gmail.com",
     "password": "123456789"
 }
 ###
@@ -14,5 +14,33 @@ POST http://localhost:3000/getAllPosts
 Content-Type: application/json
 
 {
-    "user_id": "8565739573"
+    "user_id": "612a3e6af2fb5ae3bc53722f"
+}
+
+###
+POST http://localhost:3000/getUserById
+Content-Type: application/json
+
+{
+    "id": "612a3e6af2fb5ae3bc53722f"
+}
+
+###
+POST http://localhost:3000/updateLikes
+Content-Type: application/json
+
+{
+    "user_id": "612a3e6af2fb5ae3bc53722f",
+    "likes": "1"
+}
+
+###
+POST http://localhost:3000/createPost
+Content-Type: application/json
+
+{
+    "user_id": "612b2789f9070757430e6107",
+    "likes": "0",
+    "comments": "2",
+    "value": "djksafjksbdfks"
 }

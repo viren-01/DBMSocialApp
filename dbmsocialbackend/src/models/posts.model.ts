@@ -20,6 +20,9 @@ const postSchema = new Schema({
     },
     value: {
         type: String
+    },
+    users:{
+        type:Array
     }
 })
 
