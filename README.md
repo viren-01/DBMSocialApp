@@ -2,8 +2,10 @@
 
 #For backend
 Go to backend 
-Run cmd npm run dev
+Run cmd npm install then
+npm run dev
 
 #For Frontend
 Got to frontend
-Run cmd npm start
+Run cmd npm install then
+npm start
