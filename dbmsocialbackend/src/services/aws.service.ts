@@ -1,7 +1,7 @@
 import AWS from 'aws-sdk'
 import fs from 'fs'
-const KEY_ID= "AKIA5MDCHPZTJGMF5S4F"
-const SECRET_KEY = "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"
+const KEY_ID= ""
+const SECRET_KEY = ""
 const BucketName = 'dbmsocial'
 
 const s3 = new AWS.S3({
